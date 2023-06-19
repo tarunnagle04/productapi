@@ -5,14 +5,14 @@ import { fetched } from "./controller/ProductController.js";
 import { middleware } from "./middleware/Middleware.js";
 import { DB } from "./DB/DB.js";
 
-app.use(cors());
 export const app = express();
-const router = express.Router();
+app.use(cors());
 
+app.use(express.json());
+const router = express.Router();
+app.use(router);
 dotenv.config();
 
-app.use(router);
-app.use(express.json());
 
 router.get("/", (req, res) => {
   res.status(500).json({
