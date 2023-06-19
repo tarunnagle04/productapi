@@ -5,12 +5,12 @@ import { fetched } from "./controller/ProductController.js";
 import { middleware } from "./middleware/Middleware.js";
 import { DB } from "./DB/DB.js";
 
+app.use(cors());
 export const app = express();
 const router = express.Router();
 
 dotenv.config();
 
-app.use(cors());
 app.use(router);
 app.use(express.json());
 
