@@ -5,7 +5,6 @@ export const fetched = async (req, res) => {
     const products = await ProductModel.find({});
     res.status(200).json({
       message: "Products fetched successfully from Atlas",
-      status: true,
       products: products,
     });
   } catch (e) {
